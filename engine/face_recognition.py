@@ -8,13 +8,13 @@ import json
 from lib.camera import Camera
 from lib.face_detector import FaceDetector
 
-# DATABASE_DIR = './engine/database/faces/'
-# FACE_CASCADES = './engine/cascades/data/haarcascade_frontalface_alt.xml'
+DATABASE_DIR = './engine/database/faces/'
+FACE_CASCADES = './engine/cascades/data/haarcascade_frontalface_alt.xml'
 
 
 # For Testing
-DATABASE_DIR = '../engine/database/faces/'
-FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
+# DATABASE_DIR = '../engine/database/faces/'
+# FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
 
 
 def get_images(frame, faces_coord, shape):

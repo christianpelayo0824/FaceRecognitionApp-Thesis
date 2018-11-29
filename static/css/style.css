@@ -22,11 +22,12 @@ body {
     background-color: #232b2b;
     color: #F5F5F5;
 }
-
+a.btn,
 button.btn {
     font-family: 'Varela-Round';
     text-transform: uppercase;
     font-size: .8em;
+    border-radius: 1.5px;
 }
 
 .title {
@@ -312,10 +313,32 @@ button.btn {
     border-radius: 0px;
     background-color: #263238;
     color: #F5F5F5;
-    border-color: #F5F5F5;
+    border-color: #78909C;
 
 }
 
 #form-wrapper > h4 {
     margin-bottom: 15px;
+}
+
+#capture-box {
+    height: 130px;
+    width: 130px;
+    border: 1px solid #03A9F4;
+    border-radius: 100px;
+    background-image: url('../icons/icons8-male-user-100.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border-color: red; */
+}
+
+#capture-btn {
+    margin-top: 10px;
+    width: 200px;
+}
+
+#separator {
+    border: none;
+    background-color: #546E7A;
+    width: 100%;
 }

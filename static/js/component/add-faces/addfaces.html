@@ -16,13 +16,13 @@
             <div id="form-wrapper">
                 <h4>Personal Information</h4>
                 <form action="">
-                    <input type="text" class="form-control" placeholder="Employee ID">
-                    <input type="text" class="form-control" placeholder="Firstname">
+                    <input type="text" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
+                    <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'> 
                     <input type="text" class="form-control" placeholder="Lastname">
                     <input type="text" class="form-control" placeholder="Phone">
                     <input type="text" class="form-control" placeholder="Email">
                     <div id="btn-wrapper">
-                        <a href="#!/addfacestwo" class="btn btn-primary" id="next-btn">Next</a>
+                        <a href="#!/addfacestwo" class="btn btn-primary" id="next-btn" ng-click="test1(emp)">Next</a>
                     </div>
                 </form>
             </div>
