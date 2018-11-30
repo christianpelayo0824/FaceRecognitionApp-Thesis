@@ -7,7 +7,7 @@
             <div id="progress-bar-wrapper">
                 <ul id="progress-bar-one">
                     <li class="active">Personal</li>
-                    <li>Department</li>
+                    <li class="active-two">Job</li>
                     <li>Capture</li>
                 </ul>
             </div>
@@ -17,16 +17,18 @@
                 <h4>Personal Information</h4>
                 <form action="">
                     <input type="text" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
-                    <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'> 
-                    <input type="text" class="form-control" placeholder="Lastname">
-                    <input type="text" class="form-control" placeholder="Phone">
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'>
+                    <input type="text" class="form-control" placeholder="Lastname" ng-model='emp.lastname'>
+                    <input type="text" class="form-control" placeholder="Phone" ng-model='emp.phone'>
+                    <input type="text" class="form-control" placeholder="Email" ng-model='emp.email'>
                     <div id="btn-wrapper">
-                        <a href="#!/addfacestwo" class="btn btn-primary" id="next-btn" ng-click="test1(emp)">Next</a>
+                        <button class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</button>
                     </div>
                 </form>
             </div>
         </center>
         <br>
+        
     </div>
+    
 </section>

@@ -7,22 +7,22 @@
             <div id="progress-bar-wrapper">
                 <ul id="progress-bar-two">
                     <li class="active">Personal</li>
-                    <li class="active-two">Department</li>
+                    <li class="active-two">Job</li>
                     <li>Capture</li>
                 </ul>
             </div>
         </center>
         <center>
             <div id="form-wrapper">
-                <h4>Department Information</h4>
+                <h4>Job Description</h4>
                 <form action="">
-                    <input type="text" class="form-control" placeholder="Department">
-                    <input type="text" class="form-control" placeholder="Position">
-                    <input type="text" class="form-control" placeholder="Lastname">
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" class="form-control" placeholder="Department" ng-model="emp.department">
+                    <input type="text" class="form-control" placeholder="Position" ng-model="emp.position">
+                    <!-- <input type="text" class="form-control" placeholder="Lastname">
+                    <input type="text" class="form-control" placeholder="Email"> -->
                     <div id="btn-wrapper">
-                        <a href="#!/addfaces" class="btn btn-primary" id="back-btn" > Back</a>
-                        <a href="#!/addfacesthree" class="btn btn-primary" id="next-btn" >Next</a>
+                        <button class="btn btn-primary" id="back-btn" ng-click="backButton(emp)"> Back</button>
+                        <button class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</button>
                     </div>
                 </form>
             </div>

@@ -1,19 +1,18 @@
 mainApp.service('EmployeeInformationService', function () {
 
-    // var employee = {
-    //     content: ''
-    // };
-
-
-
-    this.setEmployee = function(emp) {
+    this.setEmployee = function (data) {
         this.employee = {
-            employeeid: emp.employeeid,
-            firstname: emp.firstname
+            employeeid: data.employeeid,
+            firstname: data.firstname,
+            lastname: data.lastname,
+            phone: data.phone,
+            email: data.email,
+            department: data.department,
+            position: data.position
         }
     }
 
-    this.getEmployee = function() {
+    this.getEmployee = function () {
         return this.employee;
     }
 });

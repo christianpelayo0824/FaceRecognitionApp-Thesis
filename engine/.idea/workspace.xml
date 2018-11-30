@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/face_recognition.py" line="100" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc0a61e7-5e6a-4f54-b97b-b0a144de676b" name="Default Changelist" comment="" />
+    <list default="true" id="fc0a61e7-5e6a-4f54-b97b-b0a144de676b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../static/js/services/FaceInformationService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../static/js/services/FaceInformationService.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,8 @@
     <session id="-1143192965">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.17" value="2" />
@@ -59,7 +62,7 @@
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -89,11 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/face_recognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -134,10 +134,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1243" />
-    <option name="y" value="27" />
-    <option name="width" value="1022" />
-    <option name="height" value="743" />
+    <option name="x" value="-5" />
+    <option name="y" value="24" />
+    <option name="width" value="1376" />
+    <option name="height" value="748" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -145,6 +145,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,7 +157,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -322,10 +322,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1361" y="0" width="1370" height="773" extended-state="6" />
+    <frame x="-5" y="24" width="1376" height="748" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24981302" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32713178" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32868218" />
@@ -402,11 +403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/face_recognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>

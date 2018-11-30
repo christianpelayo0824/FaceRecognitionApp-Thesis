@@ -7,26 +7,41 @@
             <div id="progress-bar-wrapper">
                 <ul id="progress-bar-three">
                     <li class="active">Personal</li>
-                    <li class="active-two">Department</li>
+                    <li class="active-two">Job</li>
                     <li class="active-three">Capture</li>
                 </ul>
             </div>
         </center>
         <center>
             <div id="form-wrapper">
-                <h4>Capture Image</h4>
-                <form action="">
-                    <div class="capture-image-wrapper">
-                        <div id="capture-box">
-
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="employee-info-wrapper">
+                            <h6>EmployeeID: {{emp.employeeid}}</h6>
+                            <h6>Firstname: {{emp.firstname}}</h6>
+                            <h6>Lastname: {{emp.lastname}}</h6>
+                            <h6>Phone: {{emp.phone}}</h6>
+                            <h6>Email: {{emp.email}}</h6>
+                            <h6>Department: {{emp.department}}</h6>
+                            <h6>Postion: {{emp.position}}</h6>
                         </div>
-                        <button class="btn btn-primary" id="capture-btn" ng-click="test()">Capture</button>
                     </div>
-                    <hr id="separator">
-                    <div id="btn-wrapper">
-                        <a href="#!/addfacestwo" class="btn btn-primary" id="back-btn" > Back</a>
+                    <div class="col-lg-6">
+                        <h4>Capture Image</h4>
+                        <form action="">
+                            <div class="capture-image-wrapper">
+                                <div id="capture-box">
+
+                                </div>
+                                <button class="btn btn-primary" id="capture-btn" ng-click="test()">Create Dataset</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
+                <hr id="separator">
+                <div id="btn-wrapper">
+                    <button class="btn btn-primary" id="back-btn" ng-click='backButton()'> Back</button>
+                </div>
             </div>
         </center>
         <br>

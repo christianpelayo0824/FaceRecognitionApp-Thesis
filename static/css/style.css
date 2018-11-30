@@ -14,7 +14,7 @@
 }
 
 p {
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1.5px;
 }
 
@@ -314,6 +314,7 @@ button.btn {
     background-color: #263238;
     color: #F5F5F5;
     border-color: #78909C;
+    font-size: 13px;
 
 }
 
@@ -342,3 +343,14 @@ button.btn {
     background-color: #546E7A;
     width: 100%;
 }
+
+#employee-info-wrapper {
+    border-left: 2px solid #03A9F4;
+    padding-left: 10px;
+}
+
+#employee-info-wrapper > h6{
+    text-align: left;
+    font-size: 15px;
+}
+

@@ -1,8 +1,14 @@
-mainApp.controller('AddFacesThreeController', function ($scope, $location) {
-    $scope.redirectToHome = function () {
-        $location.path('/landingPage')
-    };
+mainApp.controller('AddFacesThreeController', function ($scope, $location, EmployeeInformationService) {
 
+    $scope.emp = {
+        employeeid: EmployeeInformationService.getEmployee().employeeid,
+        firstname: EmployeeInformationService.getEmployee().firstname,
+        lastname: EmployeeInformationService.getEmployee().lastname,
+        phone: EmployeeInformationService.getEmployee().phone,
+        email: EmployeeInformationService.getEmployee().email,
+        department: EmployeeInformationService.getEmployee().department,
+        position: EmployeeInformationService.getEmployee().position
+    }
 
     $scope.test = function () {
 
@@ -23,5 +29,13 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location) {
             var ob = JSON.parse(data)
             console.log(ob)
         });
+    };
+
+    $scope.backButton = function() {
+        $location.path('/addfacesthree')
+    }
+
+    $scope.redirectToHome = function () {
+        $location.path('/landingPage')
     };
 });
