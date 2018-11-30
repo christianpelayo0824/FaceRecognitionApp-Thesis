@@ -74,7 +74,7 @@ def start_recognize():
         stroke = 1
         color = (99, 30, 233)
 
-        frame = video.ip_camera(True)
+        frame = video.get_frame()
         faces_coord = detector.detect(frame, False)
         if len(faces_coord):
             frame, faces_img = get_images(frame, faces_coord, shape)
