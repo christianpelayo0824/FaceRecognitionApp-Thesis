@@ -1,5 +1,6 @@
 mainApp.controller('AddFacesThreeController', function ($scope, $location, EmployeeInformationService) {
 
+
     $scope.emp = {
         employeeid: EmployeeInformationService.getEmployee().employeeid,
         firstname: EmployeeInformationService.getEmployee().firstname,
@@ -19,20 +20,25 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
             encoding: 'utf8',
             pythonOptions: ['-u'],
             scriptPath: './engine/',
-            args: null,
+            args: [EmployeeInformationService.getEmployee().firstname],
             pathonPath: '/usr/bin/python3.5'
         };
-        var py = new python.PythonShell('face_recognition.py', options);
+
+        var py = new python.PythonShell('dataset_creator.py', options);
 
         py.on('message', function (message) {
             var data = JSON.stringify(message)
             var ob = JSON.parse(data)
             console.log(ob)
+            if (ob.message) {
+                swal("Warning!", ob.message , "warning");
+            }
         });
     };
 
-    $scope.backButton = function() {
-        $location.path('/addfacesthree')
+    $scope.backButton = function () {
+        console.log($scope.emp);
+        $location.path('/addfacestwo')
     }
 
     $scope.redirectToHome = function () {

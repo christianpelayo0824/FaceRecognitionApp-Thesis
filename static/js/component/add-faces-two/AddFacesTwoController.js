@@ -32,6 +32,14 @@ mainApp.controller('AddFacesTwoController', function ($scope, $location, Employe
         }
         EmployeeInformationService.setEmployee(employeeObj);
         $location.path('/addfacesthree');
+
+        // if (EmployeeInformationService.getEmployee().department != undefined && EmployeeInformationService.getEmployee().position != undefined &&
+        //     EmployeeInformationService.getEmployee().department != "" &&
+        //     EmployeeInformationService.getEmployee().position != "") {
+        // } else {
+        //     console.log(EmployeeInformationService.getEmployee());
+        //     swal("Warning!", "Please fill credentials correctly", "warning");
+        // }
     }
 
     $scope.redirectToHome = function () {

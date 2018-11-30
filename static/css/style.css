@@ -351,6 +351,16 @@ button.btn {
 
 #employee-info-wrapper > h6{
     text-align: left;
-    font-size: 15px;
+    padding-top: 6px;
+    font-size: 13px;
+}
+
+#warningModal {
+    color: #F5F5F5;
+    background-color: #263238;
+}
+
+#modalMessage {
+    color: #e57373;
 }
 

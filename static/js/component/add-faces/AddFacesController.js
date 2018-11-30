@@ -13,20 +13,31 @@ mainApp.controller('AddFacesController', function ($scope, $location, EmployeeIn
     }
 
     $scope.nextButton = function (data) {
-        if (data.employeeid != undefined &&
-            data.firstname != undefined &&
-            data.lastname != undefined &&
-            data.phone != undefined &&
-            data.email != undefined && 
-            data.employeeid != "" &&
-            data.firstname != "" &&
-            data.lastname != "" &&
-            data.phone != "" &&
-            data.email != "") {
-            EmployeeInformationService.setEmployee(data);
-            $location.path('/addfacestwo')
-        } else {
-            console.log('Error')
+        try {
+            if (data.employeeid != undefined &&
+                data.firstname != undefined &&
+                data.lastname != undefined &&
+                data.phone != undefined &&
+                data.email != undefined &&
+                data.employeeid != "" &&
+                data.firstname != "" &&
+                data.lastname != "" &&
+                data.phone != "" &&
+                data.email != "") {
+                EmployeeInformationService.setEmployee(data);
+                $location.path('/addfacestwo')
+            } else {
+                // console.log("Invalid email")
+                // document.getElementById('triggerModal').click();
+                // $scope.modalContent = 'Invalid email'
+                swal("Warning!", "Invalid email", "warning");
+            }
+        } catch (error) {
+            // document.getElementById('triggerModal').click();
+            // console.log($scope.test);
+            // $scope.modalContent = 'Please fill credentials correctly.'\
+            swal("Warning!", "Please fill credentials correctly", "warning");
+
         }
     };
 

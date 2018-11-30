@@ -16,11 +16,11 @@
             <div id="form-wrapper">
                 <h4>Personal Information</h4>
                 <form action="">
-                    <input type="text" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
+                    <input type="number" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
                     <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'>
                     <input type="text" class="form-control" placeholder="Lastname" ng-model='emp.lastname'>
-                    <input type="text" class="form-control" placeholder="Phone" ng-model='emp.phone'>
-                    <input type="text" class="form-control" placeholder="Email" ng-model='emp.email'>
+                    <input type="number" class="form-control" placeholder="Phone" ng-model='emp.phone'>
+                    <input type="email" class="form-control" placeholder="Email" ng-model='emp.email'>
                     <div id="btn-wrapper">
                         <button class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</button>
                     </div>
@@ -28,7 +28,31 @@
             </div>
         </center>
         <br>
-        
     </div>
-    
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="triggerModal" hidden="hidden">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="warningModal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMessage">{{modalContent}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

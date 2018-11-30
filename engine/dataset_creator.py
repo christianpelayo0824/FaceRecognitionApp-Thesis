@@ -1,12 +1,18 @@
 import cv2
 import os
+import sys
+import json
 import lib.face_corrector as op
 
 from lib.camera import Camera
 from lib.face_detector import FaceDetector
 
-DATABASE_DIR = '../engine/database/faces/'
-FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
+DATABASE_DIR = './engine/database/faces/'
+FACE_CASCADES = './engine/cascades/data/haarcascade_frontalface_alt.xml'
+
+# Testing
+# DATABASE_DIR = '../engine/database/faces/'
+# FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
 
 
 def get_images(frame, faces_coord, shape):
@@ -21,7 +27,8 @@ def get_images(frame, faces_coord, shape):
 def add_faces():
     if not os.path.exists(DATABASE_DIR):
         os.mkdir(DATABASE_DIR)
-    face_id = input('Face UD: ')
+    # face_id = input('Name: ')
+    face_id = sys.argv[1]
     face_dir = DATABASE_DIR + face_id
     if not os.path.exists(face_dir):
         os.mkdir(face_dir)
@@ -32,14 +39,17 @@ def add_faces():
         cv2.namedWindow('Video Feed', cv2.WINDOW_AUTOSIZE)
         cv2.namedWindow('Saved Face', cv2.WINDOW_NORMAL)
         while counter < 21:
-            frame = camera.ip_camera(True)
+            frame = camera.get_frame(True)
             face_coordinate = face_detector.detect(frame)
             if len(face_coordinate):
                 shape = 'rectangle'
                 frame, face_image = get_images(frame, face_coordinate, shape)
                 if timer % 100 == 5:
                     cv2.imwrite(face_dir + '/' + str(counter) + '.jpg', face_image[0])
-                    print('Image Saved: ' + str(counter))
+                    print(json.dumps({
+                        'Image Saved': + str(counter)
+                    }))
+                    # print('Image Saved: ' + str(counter))
                     counter += 1
                     cv2.imshow('Saved Face', face_image[0])
 
@@ -47,7 +57,9 @@ def add_faces():
             cv2.waitKeyEx(50)
             timer += 5
     else:
-        print('Face ID already exist')
+        print(json.dumps({
+            'message': 'Face ID already exist'
+        }))
 
 
 if __name__ == '__main__':
