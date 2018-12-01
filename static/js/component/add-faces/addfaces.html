@@ -15,14 +15,14 @@
         <center>
             <div id="form-wrapper">
                 <h4>Personal Information</h4>
-                <form action="">
+                <form>
                     <input type="number" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
                     <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'>
                     <input type="text" class="form-control" placeholder="Lastname" ng-model='emp.lastname'>
                     <input type="number" class="form-control" placeholder="Phone" ng-model='emp.phone'>
                     <input type="email" class="form-control" placeholder="Email" ng-model='emp.email'>
                     <div id="btn-wrapper">
-                        <button class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</button>
+                        <a class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</a>
                     </div>
                 </form>
             </div>
@@ -31,9 +31,7 @@
     </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="triggerModal" hidden="hidden">
-        Launch demo modal
-    </button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="triggerModal" hidden="hidden"></button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
