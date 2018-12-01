@@ -10,6 +10,7 @@ from lib.face_detector import FaceDetector
 DATABASE_DIR = './engine/database/faces/'
 FACE_CASCADES = './engine/cascades/data/haarcascade_frontalface_alt.xml'
 
+
 # Testing
 # DATABASE_DIR = '../engine/database/faces/'
 # FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
@@ -39,7 +40,10 @@ def add_faces():
         cv2.namedWindow('Video Feed', cv2.WINDOW_AUTOSIZE)
         cv2.namedWindow('Saved Face', cv2.WINDOW_NORMAL)
         while counter < 21:
-            frame = camera.get_frame(True)
+            # print(json.dumps({
+            #     'status':'true'
+            # }))
+            frame = camera.get_frame()
             face_coordinate = face_detector.detect(frame)
             if len(face_coordinate):
                 shape = 'rectangle'
@@ -47,7 +51,7 @@ def add_faces():
                 if timer % 100 == 5:
                     cv2.imwrite(face_dir + '/' + str(counter) + '.jpg', face_image[0])
                     print(json.dumps({
-                        'Image Saved': + str(counter)
+                        'imageCounter': str(counter)
                     }))
                     # print('Image Saved: ' + str(counter))
                     counter += 1
@@ -56,9 +60,12 @@ def add_faces():
             cv2.imshow('Video Feed', frame)
             cv2.waitKeyEx(50)
             timer += 5
+            if cv2.waitKey(100) & 0xFF == 27:
+                sys.exit()
     else:
         print(json.dumps({
-            'message': 'Face ID already exist'
+            'message': 'Face ID already exist',
+            'status': 'false'
         }))
 
 

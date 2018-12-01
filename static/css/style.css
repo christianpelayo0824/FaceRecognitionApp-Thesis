@@ -323,11 +323,11 @@ button.btn {
 }
 
 #capture-box {
-    height: 130px;
-    width: 130px;
-    border: 1px solid #03A9F4;
-    border-radius: 100px;
-    background-image: url('../icons/icons8-male-user-100.png');
+    height: 100px;
+    width: 100px;
+    /* border: 1px solid #03A9F4; */
+    /* border-radius: 10px; */
+    background-image: url('../icons/icons8-face-id-100.png');
     background-size: cover;
     background-repeat: no-repeat;
     /* border-color: red; */
@@ -364,3 +364,6 @@ button.btn {
     color: #e57373;
 }
 
+#test {
+    display: none;
+}

@@ -27,15 +27,9 @@ mainApp.controller('AddFacesController', function ($scope, $location, EmployeeIn
                 EmployeeInformationService.setEmployee(data);
                 $location.path('/addfacestwo')
             } else {
-                // console.log("Invalid email")
-                // document.getElementById('triggerModal').click();
-                // $scope.modalContent = 'Invalid email'
                 swal("Warning!", "Invalid email", "warning");
             }
         } catch (error) {
-            // document.getElementById('triggerModal').click();
-            // console.log($scope.test);
-            // $scope.modalContent = 'Please fill credentials correctly.'\
             swal("Warning!", "Please fill credentials correctly", "warning");
 
         }

@@ -28,17 +28,21 @@
                     </div>
                     <div class="col-lg-6">
                         <h4>Capture Image</h4>
-                        <form action="">
-                            <div class="capture-image-wrapper">
-                                <div id="capture-box">
-
-                                </div>
-                                <button class="btn btn-primary" id="capture-btn" ng-click="test()">Create Dataset</button>
-                            </div>
-                        </form>
+                        <div class="capture-image-wrapper">
+                            <div id="capture-box"></div>
+                            <button class="btn btn-primary" id="capture-btn" ng-click="createDataset()">Create Dataset</button>
+                        </div>
                     </div>
                 </div>
+                <!-- <br> -->
                 <hr id="separator">
+                <p>{{datasetProgress}}</p>
+                <div class="progress" id="progressBar">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="10"
+                        aria-valuemin="0" aria-valuemax="100" id="progress-bar-status"></div>
+                </div>
+                <!-- <hr id="separator"> -->
+                <br>
                 <div id="btn-wrapper">
                     <button class="btn btn-primary" id="back-btn" ng-click='backButton()'>Back</button>
                 </div>
