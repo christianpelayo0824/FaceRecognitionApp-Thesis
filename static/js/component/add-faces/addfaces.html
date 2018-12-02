@@ -16,11 +16,24 @@
             <div id="form-wrapper">
                 <h4>Personal Information</h4>
                 <form>
-                    <input type="number" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid'>
-                    <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname'>
-                    <input type="text" class="form-control" placeholder="Lastname" ng-model='emp.lastname'>
-                    <input type="number" class="form-control" placeholder="Phone" ng-model='emp.phone'>
-                    <input type="email" class="form-control" placeholder="Email" ng-model='emp.email'>
+                    <label for="#employee-id">Employee ID</label>
+                    <input type="number" class="form-control" placeholder="Employee ID" ng-model='emp.employeeid' id="employee-id">
+                    <!-- <hr id="separator"> -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="#employee-id">Firstname</label>
+                            <input type="text" class="form-control" placeholder="Firstname" ng-model='emp.firstname' id="firstname">
+                        </div>
+                        <div class="col-lg-6">
+
+                            <label for="#employee-id">Lastname</label>
+                            <input type="text" class="form-control" placeholder="Lastname" ng-model='emp.lastname' id="lastname">
+                        </div>
+                    </div>
+                    <label for="#employee-id">Phone</label>
+                    <input type="number" class="form-control" placeholder="Phone" ng-model='emp.phone' id="phone">
+                    <label for="#employee-id">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" ng-model='emp.email' id="email">
                     <div id="btn-wrapper">
                         <a class="btn btn-primary" id="next-btn" ng-click="nextButton(emp)">Next</a>
                     </div>
@@ -31,7 +44,8 @@
     </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="triggerModal" hidden="hidden"></button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="triggerModal"
+        hidden="hidden"></button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"

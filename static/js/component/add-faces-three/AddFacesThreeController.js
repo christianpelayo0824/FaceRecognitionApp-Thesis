@@ -1,6 +1,7 @@
 mainApp.controller('AddFacesThreeController', function ($scope, $location, EmployeeInformationService) {
 
-    $scope.datasetProgress = ''
+    $scope.datasetProgress = '';
+    $scope.progressLabel = '';
 
     $scope.emp = {
         employeeid: EmployeeInformationService.getEmployee().employeeid,
@@ -13,10 +14,7 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
     }
 
     $scope.createDataset = function () {
-
-
         var python = require('python-shell');
-        console.log(python);
         var options = {
             mode: 'json',
             encoding: 'utf8',
@@ -27,8 +25,6 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
         };
 
         var py = new python.PythonShell('dataset_creator.py', options);
-
-        var imageCounter = '';
         py.on('message', function (message) {
             var data = JSON.stringify(message)
             var ob = JSON.parse(data)
@@ -38,27 +34,29 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
                     title: 'Ooopss!',
                     text: ob.message,
                     icon: 'warning',
-                    button: true
-                })
+                    button: 'OK'
+                });
             } else {
-                imageCounter = ob.imageCounter;
-                progressBarStatus('progress-bar-status', imageCounter)
-                if (ob.imageCounter == 20) {
+                progressBarStatus('progress-bar-status', ob.imageCounter);
+                // if (ob.imageCounter == 5) {
+                if (ob.imageCounter == 25) {
                     swal({
                         title: 'Success',
                         text: ob.imageCounter + " dataset has been created",
                         icon: 'success',
                         button: 'Done'
+                    }).then(function () {
+                        console.log('Hit');
+                        window.location.href = '#!/landingPage';
+                        $scope.emp = null;
                     })
                 }
             }
         });
         $scope.datasetProgress = 'Creating Dataset...'
-
     };
 
     $scope.backButton = function () {
-        console.log($scope.emp);
         $location.path('/addfacestwo')
     }
 
@@ -68,9 +66,8 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
 
     function progressBarStatus(id, status) {
         var e = document.getElementById(id);
-        status = (status / 20) * 100;
-        console.log(status);
+        // status = (status / 5) * 100;
+        status = (status / 25) * 100;
         e.style.width = status + '%';
     }
-
 });

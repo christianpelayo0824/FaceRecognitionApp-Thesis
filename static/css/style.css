@@ -308,15 +308,24 @@ button.btn {
     margin-bottom: 30px;
 }
 
-#form-wrapper > form > input{
-    margin-bottom: 15px;
+#form-wrapper > form > input,
+#form-wrapper > form > div.row > div.col-lg-6> input{
+    margin-bottom: 10px;
     border-radius: 0px;
     background-color: #263238;
     color: #F5F5F5;
     border-color: #78909C;
-    font-size: 13px;
+    font-size: 12px;
 
 }
+
+
+#form-wrapper > form > label,
+#form-wrapper > form > div.row > div.col-lg-6> label{
+    float: left;
+    font-size: 10px;
+}
+
 
 #form-wrapper > h4 {
     margin-bottom: 15px;

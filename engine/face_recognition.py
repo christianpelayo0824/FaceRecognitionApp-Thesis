@@ -73,29 +73,20 @@ def start_recognize():
     while True:
         stroke = 1
         color = (99, 30, 233)
-
+        cv2.namedWindow('Frame', cv2.WND_PROP_FULLSCREEN)
+        cv2.setWindowProperty('Frame', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
         frame = video.get_frame()
+        # frame = video.ip_camera(True)
         faces_coord = detector.detect(frame, False)
         if len(faces_coord):
             frame, faces_img = get_images(frame, faces_coord, shape)
             for i, face_img in enumerate(faces_img):
-                # if __version__ == "3.1.0":
-                #     collector = cv2.face.MinDistancePredictCollector()
-                #     recognizer.predict(face_img, collector)
-                #     conf = collector.getDist()
-                #     pred = collector.getLabel()
-                # else:
                 pred, conf = recognizer.predict(face_img)
-                # print("Prediction: " + str(pred))
-                # print('Confidence: ' + str(round(conf)))
-                # print('Threshold: ' + str(threshold))
-
                 print(json.dumps({
                     'prediction': pred,
                     'Confidence': conf,
                     'Threshold': threshold
                 }))
-
                 if conf < threshold:
                     cv2.putText(frame, labels_faces[pred].capitalize() + ' | ' + str(round(conf)),
                                 (faces_coord[i][0], faces_coord[i][1] - 2),
@@ -109,7 +100,7 @@ def start_recognize():
 
         cv2.putText(frame, "ESC to exit", (5, frame.shape[0] - 5),
                     cv2.FONT_HERSHEY_PLAIN, 1.2, color, 1, cv2.LINE_AA)
-        cv2.imshow('Video', frame)
+        cv2.imshow('Frame', frame)
         if cv2.waitKey(100) & 0xFF == 27:
             sys.exit()
 

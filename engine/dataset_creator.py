@@ -39,27 +39,24 @@ def add_faces():
         timer = 0
         cv2.namedWindow('Video Feed', cv2.WINDOW_AUTOSIZE)
         cv2.namedWindow('Saved Face', cv2.WINDOW_NORMAL)
-        while counter < 21:
-            # print(json.dumps({
-            #     'status':'true'
-            # }))
+        while counter < 26:
             frame = camera.get_frame()
+            # frame = camera.ip_camera(True)
             face_coordinate = face_detector.detect(frame)
             if len(face_coordinate):
                 shape = 'rectangle'
                 frame, face_image = get_images(frame, face_coordinate, shape)
-                if timer % 100 == 5:
+                if timer % 100 == 20:
                     cv2.imwrite(face_dir + '/' + str(counter) + '.jpg', face_image[0])
                     print(json.dumps({
                         'imageCounter': str(counter)
                     }))
-                    # print('Image Saved: ' + str(counter))
                     counter += 1
                     cv2.imshow('Saved Face', face_image[0])
 
             cv2.imshow('Video Feed', frame)
             cv2.waitKeyEx(50)
-            timer += 5
+            timer += 20
             if cv2.waitKey(100) & 0xFF == 27:
                 sys.exit()
     else:
