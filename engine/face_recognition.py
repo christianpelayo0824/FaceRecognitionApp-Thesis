@@ -75,8 +75,8 @@ def start_recognize():
         color = (99, 30, 233)
         cv2.namedWindow('Frame', cv2.WND_PROP_FULLSCREEN)
         cv2.setWindowProperty('Frame', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-        frame = video.get_frame()
-        # frame = video.ip_camera(True)
+        # frame = video.get_frame()
+        frame = video.ip_camera(True)
         faces_coord = detector.detect(frame, False)
         if len(faces_coord):
             frame, faces_img = get_images(frame, faces_coord, shape)
