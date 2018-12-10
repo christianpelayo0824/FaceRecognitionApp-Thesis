@@ -1,7 +1,6 @@
 mainApp.controller('RecognizeController', function ($scope, $location) {
     $scope.redirectToHome = function () {
         $location.path('/landingPage');
-        console.log('Hit')
     }
 
     $scope.test = function () {
@@ -22,7 +21,5 @@ mainApp.controller('RecognizeController', function ($scope, $location) {
             var object = JSON.parse(data);
             console.log(object);
         })
-
     }
-
 });

@@ -39,9 +39,9 @@ def add_faces():
         timer = 0
         cv2.namedWindow('Video Feed', cv2.WINDOW_AUTOSIZE)
         cv2.namedWindow('Saved Face', cv2.WINDOW_NORMAL)
-        while counter < 26:
-            frame = camera.get_frame()
-            # frame = camera.ip_camera(True)
+        while counter < 3:
+            # frame = camera.get_frame()
+            frame = camera.ip_camera(True)
             face_coordinate = face_detector.detect(frame)
             if len(face_coordinate):
                 shape = 'rectangle'

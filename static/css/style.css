@@ -65,6 +65,19 @@ button.btn {
     height: 200px;
 }
 
+#header-wrapper > center > img {
+    margin-top: 40px;
+    opacity: 0.85;
+    /* height: 110px; */
+
+}
+
+#header-wrapper > center > h6 {
+    margin-top: 8px;
+    font-family: 'Montserrat-Light';
+    text-transform: uppercase;
+}
+
 
 #button-wrapper {
     margin-top: 30px;
@@ -410,4 +423,11 @@ button.btn {
 
 #test {
     display: none;
+}
+
+/* Recognize */
+#recognize-button {
+    margin-top: 150px;
+    height: 100px;
+    width: 400px;
 }

@@ -1,18 +1,57 @@
-mainApp.service('EmployeeInformationService', function () {
+// Service for communicating service endpoint
+mainApp.service('EmployeeInformationService', ['$http', function ($http) {
 
+    // Rest endpoint base URL
+    var BASE_LINK = 'http://localhost:8080/api/resource/career';
+
+    // Setter
     this.setEmployee = function (data) {
-        this.employee = {
-            employeeid: data.employeeid,
-            firstname: data.firstname,
-            lastname: data.lastname,
-            phone: data.phone,
-            email: data.email,
-            department: data.department,
-            position: data.position
+        // Undefined data trapping
+        if (data == undefined) {
+            this.employee = undefined;
+        } else {
+            this.employee = {
+                employeeid: data.employeeid,
+                firstname: data.firstname,
+                lastname: data.lastname,
+                phone: data.phone,
+                email: data.email,
+                department: data.department,
+                position: data.position
+            }
         }
     }
 
+    // Getter
     this.getEmployee = function () {
         return this.employee;
     }
-});
+
+    // Get all Career Profile from the server
+    this.getAllCareerProfile = function () {
+        return $http({
+            method: 'GET',
+            url: BASE_LINK + '/getAllCareerProfile'
+        })
+    }
+
+    // Create Career Profile to the server
+    this.createCareerProfile = function (emplCareer) {
+        return $http({
+            method: 'POST',
+            url: BASE_LINK + '/createCareerProfile',
+            data: {
+                department: emplCareer.department,
+                position: emplCareer.position,
+                station: "A",
+                employee_id: emplCareer.employeeid,
+                employee: {
+                    firstname: emplCareer.firstname,
+                    lastname: emplCareer.lastname,
+                    phone: emplCareer.phone,
+                    email: emplCareer.email
+                }
+            }
+        });
+    }
+}]);

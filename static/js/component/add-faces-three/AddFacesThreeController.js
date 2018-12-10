@@ -3,6 +3,7 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
     $scope.datasetProgress = '';
     $scope.progressLabel = '';
 
+    // Getter data receiver
     $scope.emp = {
         employeeid: EmployeeInformationService.getEmployee().employeeid,
         firstname: EmployeeInformationService.getEmployee().firstname,
@@ -13,6 +14,8 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
         position: EmployeeInformationService.getEmployee().position
     }
 
+    // -  Bind Electron js with python using python-shell js library 
+    //  - Call python script
     $scope.createDataset = function () {
         var python = require('python-shell');
         var options = {
@@ -38,17 +41,24 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
                 });
             } else {
                 progressBarStatus('progress-bar-status', ob.imageCounter);
-                // if (ob.imageCounter == 5) {
-                if (ob.imageCounter == 25) {
+
+                if (ob.imageCounter == 2) {
                     swal({
                         title: 'Success',
                         text: ob.imageCounter + " dataset has been created",
                         icon: 'success',
                         button: 'Done'
                     }).then(function () {
-                        console.log('Hit');
-                        window.location.href = '#!/landingPage';
-                        $scope.emp = null;
+                        // Call createCareerProfile funtion from services
+                        EmployeeInformationService.createCareerProfile($scope.emp).
+                            then(function (response) {
+                                if (response.status == 200) {
+                                    var ob = {}
+                                    ob = undefined
+                                    EmployeeInformationService.setEmployee(ob);
+                                    window.location.href = '#!/landingPage';
+                                }
+                            });
                     })
                 }
             }
@@ -56,18 +66,21 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
         $scope.datasetProgress = 'Creating Dataset...'
     };
 
+    // Redirecto to addfacestwo page
     $scope.backButton = function () {
         $location.path('/addfacestwo')
     }
 
+    // Redirecto to landingpage
     $scope.redirectToHome = function () {
         $location.path('/landingPage')
     };
 
+    // Bind python data with progress bar - function
     function progressBarStatus(id, status) {
         var e = document.getElementById(id);
-        // status = (status / 5) * 100;
-        status = (status / 25) * 100;
+        // status = (status / 20) * 100;
+        status = (status / 2) * 100;
         e.style.width = status + '%';
     }
 });

@@ -1,6 +1,9 @@
 mainApp.controller('AddFacesController', function ($scope, $location, EmployeeInformationService) {
 
-    if (EmployeeInformationService.getEmployee() != undefined) {
+    // Getter reciever
+    if (EmployeeInformationService.getEmployee() == undefined) {
+        console.log('UNDEFINED');
+    } else {
         $scope.emp = {
             employeeid: EmployeeInformationService.getEmployee().employeeid,
             firstname: EmployeeInformationService.getEmployee().firstname,
@@ -12,6 +15,7 @@ mainApp.controller('AddFacesController', function ($scope, $location, EmployeeIn
         }
     }
 
+    // Data binding in nextButton function
     $scope.nextButton = function (data) {
         try {
             if (data.employeeid != undefined &&
@@ -31,12 +35,11 @@ mainApp.controller('AddFacesController', function ($scope, $location, EmployeeIn
             }
         } catch (error) {
             swal("Warning!", "Please fill credentials correctly", "warning");
-
         }
     };
 
+    // Redirect page to landing page
     $scope.redirectToHome = function () {
         $location.path('/landingPage')
     };
-
 });

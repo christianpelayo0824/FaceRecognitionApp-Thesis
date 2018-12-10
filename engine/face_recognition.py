@@ -54,7 +54,8 @@ def start_recognize():
         threshold = 300
     elif choice == 3:
         recognizer = cv2.face.LBPHFaceRecognizer_create()
-        threshold = 105
+        # threshold = 105
+        threshold = 100
     images = []
     labels = []
     labels_faces = {}

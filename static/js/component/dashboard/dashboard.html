@@ -4,6 +4,39 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, saepe atque! Voluptate sint quas
             consequuntur beatae excepturi impedit maxime deleniti explicabo nihil odio, praesentium autem provident
             voluptates! Asperiores, optio perspiciatis!</p>
+        <button class="btn btn-primary" ng-click="test()">Test</button>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Station</th>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Operation</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employee">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.station}}</td>
+                    <td>{{emp.employee.firstname}}</td>
+                    <td>{{emp.employee.lastname}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.department}}</td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+                            ng-click="getTempById(temp.id)">UPDATE</button>
+                        | <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" ng-click="getTempById(temp.id)">DELETE</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
+
 
 </section>

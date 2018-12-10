@@ -1,11 +1,12 @@
 mainApp.controller('AddFacesTwoController', function ($scope, $location, EmployeeInformationService) {
 
-
+    // Getter data reciever 
     $scope.emp = {
         department: EmployeeInformationService.getEmployee().department,
         position: EmployeeInformationService.getEmployee().position
     }
 
+    // Binding data to backButton function
     $scope.backButton = function (data) {
         employeeObj = {
             employeeid: EmployeeInformationService.getEmployee().employeeid,
@@ -20,6 +21,7 @@ mainApp.controller('AddFacesTwoController', function ($scope, $location, Employe
         $location.path('/addfaces');
     }
 
+    // Binding data to nextButton function
     $scope.nextButton = function (data) {
         employeeObj = {
             employeeid: EmployeeInformationService.getEmployee().employeeid,
@@ -32,16 +34,9 @@ mainApp.controller('AddFacesTwoController', function ($scope, $location, Employe
         }
         EmployeeInformationService.setEmployee(employeeObj);
         $location.path('/addfacesthree');
-
-        // if (EmployeeInformationService.getEmployee().department != undefined && EmployeeInformationService.getEmployee().position != undefined &&
-        //     EmployeeInformationService.getEmployee().department != "" &&
-        //     EmployeeInformationService.getEmployee().position != "") {
-        // } else {
-        //     console.log(EmployeeInformationService.getEmployee());
-        //     swal("Warning!", "Please fill credentials correctly", "warning");
-        // }
     }
 
+    // Redirect page to landing page
     $scope.redirectToHome = function () {
         $location.path('/landingPage')
     };
