@@ -4,27 +4,12 @@ mainApp.service('EmployeeInformationService', ['$http', function ($http) {
     // Rest endpoint base URL
     var BASE_LINK = 'http://localhost:8080/api/resource/career';
 
-    // Setter
-    this.setEmployee = function (data) {
-        // Undefined data trapping
-        if (data == undefined) {
-            this.employee = undefined;
-        } else {
-            this.employee = {
-                employeeid: data.employeeid,
-                firstname: data.firstname,
-                lastname: data.lastname,
-                phone: data.phone,
-                email: data.email,
-                department: data.department,
-                position: data.position
-            }
-        }
-    }
-
-    // Getter
-    this.getEmployee = function () {
-        return this.employee;
+    // Delete career profile rest end point as service
+    this.deleteCareerProfileById = function (id) {
+        return $http({
+            method: 'DELETE',
+            url: BASE_LINK + '/deleteCareerProfileById/' + id
+        })
     }
 
     // Get all Career Profile from the server
@@ -53,5 +38,28 @@ mainApp.service('EmployeeInformationService', ['$http', function ($http) {
                 }
             }
         });
+    }
+
+    // Setter
+    this.setEmployee = function (data) {
+        // Undefined data trapping
+        if (data == undefined) {
+            this.employee = undefined;
+        } else {
+            this.employee = {
+                employeeid: data.employeeid,
+                firstname: data.firstname,
+                lastname: data.lastname,
+                phone: data.phone,
+                email: data.email,
+                department: data.department,
+                position: data.position
+            }
+        }
+    }
+
+    // Getter
+    this.getEmployee = function () {
+        return this.employee;
     }
 }]);

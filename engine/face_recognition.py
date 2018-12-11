@@ -32,7 +32,8 @@ def start_recognize():
         faces = [employee for employee in os.listdir(DATABASE_DIR)]
     except Exception as ex:
         print(json.dumps({
-            "message": "Have you added at least one person to the system?" + ex
+            "message": "Have you added at least one person to the system?" + str(ex),
+            "status": "isEmpty"
         }))
         sys.exit()
     print(json.dumps({

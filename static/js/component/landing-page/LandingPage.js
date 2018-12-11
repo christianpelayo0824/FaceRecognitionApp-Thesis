@@ -20,6 +20,13 @@ mainApp.controller('LandingPageController', function ($scope) {
             var data = JSON.stringify(message);
             var object = JSON.parse(data);
             console.log(object);
+            if (object.status == 'isEmpty') {
+                swal({
+                    title: "Error!",
+                    text: "Atleast one person added to the system.",
+                    icon: "error",
+                });
+            }
         })
     }
 });

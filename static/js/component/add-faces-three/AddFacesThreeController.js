@@ -34,9 +34,9 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
             console.log(ob)
             if (ob.message) {
                 swal({
-                    title: 'Ooopss!',
+                    title: 'Error!',
                     text: ob.message,
-                    icon: 'warning',
+                    icon: 'error',
                     button: 'OK'
                 });
             } else {

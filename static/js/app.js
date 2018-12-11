@@ -15,14 +15,6 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../static/js/component/service/service.html',
             controller: 'ServiceController'
         }).
-        when('/deepLearning', {
-            templateUrl: '../static/js/component/deep-learning/deeplearning.html',
-            controller: 'DeepLearningController'
-        }).
-        when('/recognize', {
-            templateUrl: '../static/js/component/recognize/recognize.html',
-            controller: 'RecognizeController'
-        }).
         when('/addfaces', {
             templateUrl: '../static/js/component/add-faces/addfaces.html',
             controller: 'AddFacesController'
@@ -34,6 +26,10 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
         when('/addfacesthree', {
             templateUrl: '../static/js/component/add-faces-three/addfacesthree.html',
             controller: 'AddFacesThreeController'
+        }).
+        when('/data', {
+            templateUrl: '../static/js/component/data-page/data.html',
+            controller: 'DataController'
         }).
         otherwise({
             redirectTo: '/landingPage'
