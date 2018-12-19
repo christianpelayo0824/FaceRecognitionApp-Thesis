@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/face_recognition.py" line="92" />
+    <bookmark url="file://$PROJECT_DIR$/face_recognition.py" line="102" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc0a61e7-5e6a-4f54-b97b-b0a144de676b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/faces/1/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/faces/1/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/faces/2/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/faces/2/2.jpg" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/face_entity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/remove_face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/faces/Christian/1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/faces/Christian/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_creator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/face_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/component/add-faces-three/AddFacesThreeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../static/js/component/add-faces-three/AddFacesThreeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/component/data-page/DataController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../static/js/component/data-page/DataController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/component/landing-page/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../static/js/component/landing-page/LandingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../template/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,42 +64,43 @@
     <session id="-1143192965">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="8" />
+          <entry key="py" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="8" />
+          <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="979" />
+          <entry key="py" value="2689" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="979" />
+          <entry key="Python" value="2689" />
         </counts>
       </usages-collector>
     </session>
@@ -103,11 +110,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face_recognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="527">
+              <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -115,43 +122,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/camera.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/remove_face.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="391">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/face_corrector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="21" selection-start-line="38" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/face_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset_creator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1545100335284" expanded="true" signature="114:619" ph="..." />
+                <marker date="1545100335284" expanded="true" signature="114:664" ph="..." />
               </folding>
             </state>
           </provider>
@@ -169,7 +148,26 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataset_creator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -199,16 +197,18 @@
         <option value="$PROJECT_DIR$/lib/face_detector.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/lib/camera.py" />
+        <option value="$PROJECT_DIR$/lib/db_connection.py" />
+        <option value="$PROJECT_DIR$/lib/face_entity.py" />
         <option value="$PROJECT_DIR$/dataset_creator.py" />
         <option value="$PROJECT_DIR$/face_recognition.py" />
+        <option value="$PROJECT_DIR$/remove_face.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-5" />
-    <option name="y" value="24" />
-    <option name="width" value="1376" />
-    <option name="height" value="748" />
+    <option name="x" value="1361" />
+    <option name="width" value="1370" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -226,7 +226,7 @@
             <path>
               <item name="engine" type="b2602c69:ProjectViewProjectNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,7 +236,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../VirtualEnvironment/oop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -261,28 +261,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dataset_creator">
-    <configuration name="camera" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="engine" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/camera.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.remove_face">
     <configuration name="dataset_creator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="engine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -304,7 +283,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="face_corrector" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="face_entity" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="engine" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,7 +295,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/face_corrector.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/face_entity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,6 +317,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/face_recognition.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="remove_face" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="engine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remove_face.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -370,17 +370,17 @@
     <list>
       <item itemvalue="Python.dataset_creator" />
       <item itemvalue="Python.face_recognition" />
-      <item itemvalue="Python.face_corrector" />
       <item itemvalue="Python.test (1)" />
-      <item itemvalue="Python.camera" />
+      <item itemvalue="Python.face_entity" />
+      <item itemvalue="Python.remove_face" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dataset_creator" />
+        <item itemvalue="Python.remove_face" />
         <item itemvalue="Python.face_recognition" />
+        <item itemvalue="Python.dataset_creator" />
+        <item itemvalue="Python.face_entity" />
         <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.face_corrector" />
-        <item itemvalue="Python.camera" />
       </list>
     </recent_temporary>
   </component>
@@ -398,19 +398,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="24" width="1376" height="748" extended-state="6" />
-    <editor active="true" />
+    <frame x="1361" y="0" width="1370" height="773" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5007752" side_tool="true" weight="0.24756919" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992248" visible="true" weight="0.24720775" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32580644" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49642006" visible="true" weight="0.24831712" />
+      <window_info id="Structure" order="2" sideWeight="0.50358" side_tool="true" weight="0.24720775" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3116279" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32868218" />
-      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32868218" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32741934" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32868218" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32713178" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -442,30 +441,28 @@
     <entry file="file://$PROJECT_DIR$/lib/test.py" />
     <entry file="file://$PROJECT_DIR$/app.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1247971764/cv2/cv2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/lib/camera.py">
+    <entry file="file://$PROJECT_DIR$/lib/face_detector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/face_corrector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
+        <state relative-caret-position="333">
           <caret line="38" column="21" selection-start-line="38" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/face_detector.py">
+    <entry file="file://$PROJECT_DIR$/lib/camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/db_connection.py" />
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -476,22 +473,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataset_creator.py">
+    <entry file="file://$PROJECT_DIR$/lib/face_entity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        <state relative-caret-position="255">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1545088671639" expanded="true" signature="168:347" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face_recognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="527">
+          <caret line="67" column="28" lean-forward="true" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset_creator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remove_face.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1545100335284" expanded="true" signature="114:619" ph="..." />
+            <marker date="1545100335284" expanded="true" signature="114:664" ph="..." />
           </folding>
         </state>
       </provider>

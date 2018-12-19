@@ -62,12 +62,14 @@ button.btn {
 
 #header-wrapper {
     background-color: #0e1111;
-    height: 200px;
+    height: 80px;
 }
 
-#header-wrapper > center > img {
-    margin-top: 40px;
+#header-wrapper > center > h5 {
+    font-family: 'Montserrat-Light';
+    margin-top: 60px;
     opacity: 0.85;
+    color: #03a9f4;
     /* height: 110px; */
 
 }
@@ -76,6 +78,7 @@ button.btn {
     margin-top: 8px;
     font-family: 'Montserrat-Light';
     text-transform: uppercase;
+    color: #E91E63;
 }
 
 
@@ -335,11 +338,27 @@ button.btn {
     background-color: #03A9F4;
 }
 
+#update-form-wrapper {
+    margin-top: 20px;
+    width: 700px;
+    background-color: #263238;
+    padding: 25px 50px 10px 50px;
+}
+
+/* -------------- */
+
 #form-wrapper {
     margin-top: 150px;
     width: 700px;
     background-color: #263238;
     padding: 25px 50px 50px 50px;
+}
+
+#update-btn {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    /* float: right; */
+    width: 100%
 }
 
 #next-btn {
@@ -352,10 +371,16 @@ button.btn {
     float: left;
 }
 
+#update-btn-wrapper {
+    margin-bottom: 5px;
+}
+
 #btn-wrapper {
     margin-bottom: 30px;
 }
 
+#update-form-wrapper > form > input,
+#update-form-wrapper > form > div.row > div.col-lg-6> input,
 #form-wrapper > form > input,
 #form-wrapper > form > div.row > div.col-lg-6> input{
     margin-bottom: 10px;
@@ -367,7 +392,8 @@ button.btn {
 
 }
 
-
+#update-form-wrapper > form > label,
+#update-form-wrapper > form > div.row > div.col-lg-6> label,
 #form-wrapper > form > label,
 #form-wrapper > form > div.row > div.col-lg-6> label{
     float: left;
@@ -439,4 +465,8 @@ button.btn {
     max-height: 480px;
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+#read-only-employee-id {
+    color: #03A9F4 !important;
 }

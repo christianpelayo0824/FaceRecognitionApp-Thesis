@@ -3,7 +3,24 @@ mainApp.controller('DataController', function (EmployeeInformationService, $scop
     // Gloabl Variables
     var globalEmployee = $scope.employee;
 
-    $scope.getTempById = function (emp) {
+    $scope.updateCareerProfile = function (emp) {
+        employeeObj = {
+            id: emp.id,
+            employeeid: emp.employee_id,
+            firstname: emp.employee.firstname,
+            lastname: emp.employee.lastname,
+            phone: emp.employee.phone,
+            email: emp.employee.email,
+            department: emp.department,
+            position: emp.position
+        }
+        // console.log(employeeObj)
+        EmployeeInformationService.setEmployeeWithId(employeeObj);
+        $location.path('/form');
+    }
+
+
+    $scope.deleteCareerProfile = function (emp) {
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this data!",
@@ -13,16 +30,39 @@ mainApp.controller('DataController', function (EmployeeInformationService, $scop
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    // Delete career profile using angular service - EmployeeInformationService
-                    EmployeeInformationService.deleteCareerProfileById(emp.id)
-                        .then(function (response) {
-                            if (response.status == 200) {
-                                swal("Poof! Your data has been deleted!", {
-                                    icon: "success",
-                                });
-                                globalEmployee.splice(globalEmployee.indexOf(emp), 1)
-                            }
-                        })
+                    // this block is to communicatie remove_face.py script from 
+                    // the engine python module
+                    var python = require('python-shell');
+                    var options = {
+                        mode: 'json',
+                        encoding: 'utf8',
+                        pythonOptions: ['-u'],
+                        scriptPath: './engine/',
+                        args: [emp.employee_id],
+                        pathonPath: '/engine/venv/bin/python3.5'
+                    };
+                    var py = new python.PythonShell('remove_face.py', options);
+                    py.on('message', function (message) {
+                        var data = JSON.stringify(message);
+                        var object = JSON.parse(data);
+                        console.log(object)
+                        // Verify script status
+                        if (object.status = false) {
+                            console.log('Not Exist')
+                        } else {
+                            //  Delete career profile using angular service - EmployeeInformationService
+                            EmployeeInformationService.deleteCareerProfileById(emp.id)
+                                .then(function (response) {
+                                    if (response.status == 200) {
+                                        swal("Poof! Your data has been deleted!", {
+                                            icon: "success",
+                                        });
+                                        globalEmployee.splice(globalEmployee.indexOf(emp), 1)
+                                    }
+                                })
+                        }
+                    })
+
                 }
             });
     }
@@ -33,7 +73,6 @@ mainApp.controller('DataController', function (EmployeeInformationService, $scop
 
     // Function to display empoyee information in table form
     test = function () {
-        console.log('hit');
         EmployeeInformationService.getAllCareerProfile()
             .then(function (response) {
                 // console.log(response.data)

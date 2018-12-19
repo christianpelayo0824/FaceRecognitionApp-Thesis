@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp', ['ngRoute'])
+var mainApp = angular.module('mainApp', ['ngRoute', 'ngAnimate'])
 
 mainApp.config(['$routeProvider', function ($routeProvider) {
 
@@ -30,6 +30,10 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
         when('/data', {
             templateUrl: '../static/js/component/data-page/data.html',
             controller: 'DataController'
+        }).
+        when('/form', {
+            templateUrl: '../static/js/component/form/form.html',
+            controller: 'FormController'
         }).
         otherwise({
             redirectTo: '/landingPage'

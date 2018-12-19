@@ -20,15 +20,16 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="emp in employee">
-                        <td>{{emp.id}}</td>
+                        <!-- <td>{{emp.id}}</td> -->
+                        <td>{{emp.employee_id}}</td>
                         <td>{{emp.station}}</td>
                         <td>{{emp.employee.firstname}}</td>
                         <td>{{emp.employee.lastname}}</td>
                         <td>{{emp.position}}</td>
                         <td>{{emp.department}}</td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
-                                ng-click="getTempById(temp.id)">UPDATE</button>
-                            | <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" ng-click="getTempById(emp)">DELETE</button>
+                                ng-click="updateCareerProfile(emp)">UPDATE</button>
+                            | <button class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" ng-click="deleteCareerProfile(emp)">DELETE</button>
                         </td>
                     </tr>
                 </tbody>

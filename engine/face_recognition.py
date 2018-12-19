@@ -4,6 +4,7 @@ import sys
 import lib.face_corrector as op
 import numpy as np
 import json
+import lib.face_entity as face_entity
 
 from lib.camera import Camera
 from lib.face_detector import FaceDetector
@@ -56,7 +57,7 @@ def start_recognize():
     elif choice == 3:
         recognizer = cv2.face.LBPHFaceRecognizer_create()
         # threshold = 105
-        threshold = 100
+        threshold = 80
     images = []
     labels = []
     labels_faces = {}
@@ -68,7 +69,10 @@ def start_recognize():
     try:
         recognizer.train(images, np.array(labels))
     except:
-        print("\nOpenCV Error: Do you have at least two people in the database?\n")
+        print(json.dumps({
+            "message": "Do you have at least two people in the database",
+            "status": "isEmpty"
+        }))
         sys.exit()
 
     video = Camera()
@@ -87,13 +91,26 @@ def start_recognize():
                 print(json.dumps({
                     'prediction': pred,
                     'Confidence': conf,
-                    'Threshold': threshold
+                    'Threshold': threshold,
                 }))
                 if conf < threshold:
-                    cv2.putText(frame, labels_faces[pred].capitalize() + ' | ' + str(round(conf)),
+
+                    # Fetch data from face_entity the data form database
+                    # to filter the firstname using uid
+                    data = face_entity.get_face_profile(labels_faces[pred].capitalize())
+                    print(json.dumps({
+                        'code': str(data)
+                    }))
+                    
+                    cv2.putText(frame, data['firstname'] + ' | ' + str(round(conf)),
                                 (faces_coord[i][0], faces_coord[i][1] - 2),
                                 cv2.FONT_HERSHEY_PLAIN, 1.7, color, stroke,
                                 cv2.LINE_AA)
+                    #
+                    # cv2.putText(frame, labels_faces[pred].capitalize() + ' | ' + str(round(conf)),
+                    #             (faces_coord[i][0], faces_coord[i][1] - 2),
+                    #             cv2.FONT_HERSHEY_PLAIN, 1.7, color, stroke,
+                    #             cv2.LINE_AA)
                 else:
                     cv2.putText(frame, "Unknown",
                                 (faces_coord[i][0], faces_coord[i][1]),

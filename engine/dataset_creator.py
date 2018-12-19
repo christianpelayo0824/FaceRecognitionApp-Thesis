@@ -10,7 +10,6 @@ from lib.face_detector import FaceDetector
 DATABASE_DIR = './engine/database/faces/'
 FACE_CASCADES = './engine/cascades/data/haarcascade_frontalface_alt.xml'
 
-
 # Testing
 # DATABASE_DIR = '../engine/database/faces/'
 # FACE_CASCADES = 'cascades/data/haarcascade_frontalface_alt.xml'
@@ -39,7 +38,7 @@ def add_faces():
         timer = 0
         cv2.namedWindow('Video Feed', cv2.WINDOW_AUTOSIZE)
         cv2.namedWindow('Saved Face', cv2.WINDOW_NORMAL)
-        while counter < 3:
+        while counter < 6:
             # frame = camera.get_frame()
             frame = camera.ip_camera(True)
             face_coordinate = face_detector.detect(frame)

@@ -23,8 +23,8 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
             encoding: 'utf8',
             pythonOptions: ['-u'],
             scriptPath: './engine/',
-            args: [EmployeeInformationService.getEmployee().firstname],
-            pathonPath: '/usr/bin/python3.5'
+            args: [EmployeeInformationService.getEmployee().employeeid],
+            pathonPath: '/engine/venv/bin/python3.5'
         };
 
         var py = new python.PythonShell('dataset_creator.py', options);
@@ -42,7 +42,7 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
             } else {
                 progressBarStatus('progress-bar-status', ob.imageCounter);
 
-                if (ob.imageCounter == 2) {
+                if (ob.imageCounter == 5) {
                     swal({
                         title: 'Success',
                         text: ob.imageCounter + " dataset has been created",
@@ -80,7 +80,7 @@ mainApp.controller('AddFacesThreeController', function ($scope, $location, Emplo
     function progressBarStatus(id, status) {
         var e = document.getElementById(id);
         // status = (status / 20) * 100;
-        status = (status / 2) * 100;
+        status = (status / 5) * 100;
         e.style.width = status + '%';
     }
 });

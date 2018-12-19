@@ -12,7 +12,7 @@ mainApp.controller('LandingPageController', function ($scope) {
             pythonOptions: ['-u'],
             scriptPath: './engine/',
             args: null,
-            pathonPath: '/usr/bin/python3.5'
+            pathonPath: '/engine/venv/bin/python3.5'
         };
 
         var py = new python.PythonShell('/face_recognition.py', options);
