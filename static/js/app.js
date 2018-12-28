@@ -35,6 +35,14 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../static/js/component/form/form.html',
             controller: 'FormController'
         }).
+        when('/recognize', {
+            templateUrl: '../static/js/component/recognize/recognize.html',
+            controller: 'RecognizeController'
+        }).
+        when('/developer', {
+            templateUrl: '../static/js/component/developer/developer.html',
+            controller: 'DeveloperController'
+        }).
         otherwise({
             redirectTo: '/landingPage'
         });

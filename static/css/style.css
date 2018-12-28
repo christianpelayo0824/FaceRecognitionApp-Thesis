@@ -218,7 +218,7 @@ button.btn {
 #card-box {
     background-color: #212121;
     height: 190px;
-    width: 190px;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,6 +242,7 @@ button.btn {
     border: 2px solid #E91E63;
     width: 150px;
 }
+
 #label {
     font-family: 'Varela-Round';
     color: #F5F5F5;
@@ -348,7 +349,7 @@ button.btn {
 /* -------------- */
 
 #form-wrapper {
-    margin-top: 150px;
+    margin-top: 135px;
     width: 700px;
     background-color: #263238;
     padding: 25px 50px 50px 50px;
@@ -452,12 +453,36 @@ button.btn {
 }
 
 /* Recognize */
-#recognize-button {
-    margin-top: 150px;
-    height: 100px;
-    width: 400px;
+#reconize-banner {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#recognize-cards{
+    background-color: #263238;
+    height: 190px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+#recognize-cards:hover {
+    border: 2px solid #03a9f4;
+}
+
+#recognize-cards > h6 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 10px 5px 10px;
+    color: #03A9F4;
+    border: 2px solid #03A9F4;;
+}
 
 /* Data */
 #table-wrapper {
@@ -469,4 +494,28 @@ button.btn {
 
 #read-only-employee-id {
     color: #03A9F4 !important;
+}
+
+/* Developer */
+#developer-wrapper {
+    margin-top: 40px;
+}
+
+#developer-wrapper 
+> .row 
+> .col-lg-4 
+> .developer-cards {
+    border: 2px solid #03A9F4;
+    height: 480px;
+}
+
+
+#developer-wrapper
+> .row 
+> .col-lg-4 
+> .developer-cards 
+> .container 
+> .img-boxes {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

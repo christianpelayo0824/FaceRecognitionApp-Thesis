@@ -60,6 +60,7 @@ def start_recognize():
         threshold = 80
     images = []
     labels = []
+    state = []
     labels_faces = {}
     for i, image_person in enumerate(faces):
         labels_faces[i] = image_person
@@ -74,7 +75,6 @@ def start_recognize():
             "status": "isEmpty"
         }))
         sys.exit()
-
     video = Camera()
     while True:
         stroke = 1
@@ -94,18 +94,25 @@ def start_recognize():
                     'Threshold': threshold,
                 }))
                 if conf < threshold:
-
                     # Fetch data from face_entity the data form database
-                    # to filter the firstname using uid
+                    # to filter the first_name using uid
                     data = face_entity.get_face_profile(labels_faces[pred].capitalize())
                     print(json.dumps({
                         'code': str(data)
                     }))
-                    
+
                     cv2.putText(frame, data['firstname'] + ' | ' + str(round(conf)),
                                 (faces_coord[i][0], faces_coord[i][1] - 2),
                                 cv2.FONT_HERSHEY_PLAIN, 1.7, color, stroke,
                                 cv2.LINE_AA)
+                    # Push Available state
+                    # if len(state) == 0:
+                    #     state.append(labels_faces[pred].capitalize())
+                    # elif state[0] != str(labels_faces[pred].capitalize()):
+                    #     print("IN")
+                    #     # Pop available state if they are not the same
+                    #     state.pop(0)
+                    print(state)
                     #
                     # cv2.putText(frame, labels_faces[pred].capitalize() + ' | ' + str(round(conf)),
                     #             (faces_coord[i][0], faces_coord[i][1] - 2),
@@ -120,6 +127,7 @@ def start_recognize():
         cv2.putText(frame, "ESC to exit", (5, frame.shape[0] - 5),
                     cv2.FONT_HERSHEY_PLAIN, 1.2, color, 1, cv2.LINE_AA)
         cv2.imshow('Frame', frame)
+
         if cv2.waitKey(100) & 0xFF == 27:
             sys.exit()
 
