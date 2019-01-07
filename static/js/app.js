@@ -43,6 +43,18 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '../static/js/component/developer/developer.html',
             controller: 'DeveloperController'
         }).
+        when('/centraldata', {
+            templateUrl: '../static/js/component/central-data/central-data.html',
+            controller: 'CentralDataController'
+        }).
+        when('/logindata', {
+            templateUrl: '../static/js/component/login-data/login-data.html',
+            controller: 'LoginDataController'
+        }).
+        when('/logoutdata', {
+            templateUrl: '../static/js/component/logout-data/logout-data.html',
+            controller: 'LogoutDataController'
+        }).
         otherwise({
             redirectTo: '/landingPage'
         });

@@ -5,6 +5,7 @@ import lib.face_corrector as op
 import numpy as np
 import json
 import lib.face_entity as face_entity
+import lib.login_face_post as login_face
 
 from lib.camera import Camera
 from lib.face_detector import FaceDetector
@@ -61,6 +62,7 @@ def start_recognize():
     images = []
     labels = []
     state = []
+    state.append(00000000)  # default
     labels_faces = {}
     for i, image_person in enumerate(faces):
         labels_faces[i] = image_person
@@ -106,13 +108,20 @@ def start_recognize():
                                 cv2.FONT_HERSHEY_PLAIN, 1.7, color, stroke,
                                 cv2.LINE_AA)
                     # Push Available state
-                    # if len(state) == 0:
-                    #     state.append(labels_faces[pred].capitalize())
-                    # elif state[0] != str(labels_faces[pred].capitalize()):
-                    #     print("IN")
-                    #     # Pop available state if they are not the same
-                    #     state.pop(0)
-                    print(state)
+                    if len(state) == 0:
+                        state.append(labels_faces[pred].capitalize())
+                    elif state[0] != str(labels_faces[pred].capitalize()):
+                        login_face.login_employee_by_id(data['employee_id'])
+                        print(json.dumps({
+                            'status': 'IN',
+                            'id': str(data['employee_id'])
+                        }))
+                        # Pop available state if they are not the same
+                        state.pop(0)
+                    # print(json.dumps({
+                    #     'state' : str(state)
+                    #     }))
+
                     #
                     # cv2.putText(frame, labels_faces[pred].capitalize() + ' | ' + str(round(conf)),
                     #             (faces_coord[i][0], faces_coord[i][1] - 2),
