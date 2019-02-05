@@ -2,10 +2,7 @@ import cv2
 import numpy as np
 import urllib.request as ur
 
-# BASE_URL = 'http://192.168.254.100:8080/shot.jpg'
-# BASE_URL = 'http://192.168.43.214:8080/shot.jpg'
 BASE_URL = 'http://172.20.10.9:8080/shot.jpg'
-# BASE_URL = 'http://192.168.1.184:8080/shot.jpg'
 
 
 class Camera(object):

@@ -39,7 +39,7 @@ mainApp.controller('CentralDataController', function (EmployeeInformationService
                         pythonOptions: ['-u'],
                         scriptPath: './engine/',
                         args: [emp.employee_id],
-                        pathonPath: '/engine/venv/bin/python3.5'
+                        pythonPath: './engine/venv/bin/python3.6'
                     };
                     var py = new python.PythonShell('remove_face.py', options);
                     py.on('message', function (message) {

@@ -2,9 +2,9 @@ import pymysql
 import json
 
 conn = pymysql.connect(
-    host='127.0.0.1',
+    host='10.42.0.15',
     user='root',
-    password='',
+    password='root',
     db='central_db',
 )
 
